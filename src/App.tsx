@@ -1,16 +1,23 @@
 import { useState } from "react";
 import "./App.css";
-import { Toaster, toast } from "sonner";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Home } from "./pages/Home";
+import Add from "./pages/Add";
+import { List } from "./pages/List";
+import { Navbar } from "./components/navbar";
+import { Footer } from "./components/Footer";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <h1 className="text-3xl font-bold ">Expense tracker</h1>
-
-   
-    </>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/add" element={<Add />} />
+        <Route path="/expenses" element={<List />} />
+      </Routes>
+      <Footer />
+    </Router>
   );
 }
 
