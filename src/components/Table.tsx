@@ -1,10 +1,5 @@
-import React from "react";
 import { Expense } from "../type";
 import { formatDate, truncateString } from "../utils";
-
-interface ExpenseProps {
-  expenses: Expense[];
-}
 
 type TableProps = {
   expenses: Expense[];
@@ -34,7 +29,9 @@ export const Table = ({ expenses, onDelete }: TableProps) => {
             <tr key={index} className="hover:bg-gray-50">
               <td className="px-6 py-4">{formatDate(expense.date)}</td>
               <td className="px-6 py-4">{expense.category}</td>
-              <td className="px-6 py-4">{truncateString(expense.description, 30) }</td>
+              <td className="px-6 py-4">
+                {truncateString(expense.description, 30)}
+              </td>
               <td className="px-6 py-4 text-right">
                 {expense.amount.toFixed(2)} RWF
               </td>

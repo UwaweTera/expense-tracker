@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-import { categories } from "../data";
-import { formatDate } from "../utils";
 import { Expense } from "../type";
 import { Toaster, toast } from "sonner";
 import { Table } from "../components/Table";
@@ -8,7 +6,6 @@ import { ExpenseFilter } from "../components/ExpenseFilter";
 
 export const List = () => {
   const [expenses, setExpenses] = useState<Expense[]>([]);
-  const [selectedDateFilter, setSelectedDateFilter] = useState("thisWeek");
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
