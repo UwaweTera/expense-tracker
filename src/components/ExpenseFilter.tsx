@@ -1,4 +1,4 @@
-import React from "react";
+
 import { categories } from "../data";
 
 type CategoriesProps = {
